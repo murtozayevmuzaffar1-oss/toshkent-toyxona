@@ -2,686 +2,143 @@
 <html lang="uz">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>TOSHKENT To‘yxonasi</title>
 
-  <!-- GOOGLE FONTS -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 
-  <!-- PANNELLUM -->
-  <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  font-family:'Poppins',sans-serif;
-  background:#070707;
-  color:white;
-  overflow-x:hidden;
-}
-
-/* HEADER */
-
-header{
-  position:fixed;
-  top:0;
-  width:100%;
-  padding:22px 8%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  z-index:1000;
-  backdrop-filter:blur(12px);
-  background:rgba(0,0,0,0.45);
-  border-bottom:1px solid rgba(255,215,0,0.1);
-}
-
-.logo{
-  font-size:34px;
-  color:gold;
-  font-family:'Cinzel',serif;
-  font-weight:800;
-}
-
-nav{
-  display:flex;
-  gap:28px;
-}
-
-nav a{
-  text-decoration:none;
-  color:white;
-  transition:0.3s;
-  font-weight:500;
-}
-
-nav a:hover{
-  color:gold;
-}
-
-/* HERO */
-
-.hero{
-  min-height:100vh;
-  position:relative;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  overflow:hidden;
-
-  background:
-  linear-gradient(rgba(0,0,0,0.65),
-  rgba(0,0,0,0.78)),
-  url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1600&auto=format&fit=crop')
-  center/cover no-repeat;
-}
-
-.hero::before{
-  content:'';
-  position:absolute;
-  width:700px;
-  height:700px;
-  background:radial-gradient(circle,
-  rgba(255,215,0,0.18),
-  transparent 70%);
-  animation: pulse 6s infinite;
-}
-
-@keyframes pulse{
-  0%{transform:scale(1);}
-  50%{transform:scale(1.2);}
-  100%{transform:scale(1);}
-}
-
-.hero-content{
-  position:relative;
-  z-index:2;
-  max-width:900px;
-  padding:20px;
-}
-
-.hero span{
-  display:inline-block;
-  padding:10px 20px;
-  border:1px solid rgba(255,215,0,0.5);
-  border-radius:50px;
-  color:gold;
-  margin-bottom:25px;
-}
-
-.hero h1{
-  font-size:120px;
-  font-family:'Cinzel',serif;
-  color:gold;
-  line-height:1;
-  margin-bottom:25px;
-  text-shadow:0 0 40px rgba(255,215,0,0.4);
-}
-
-.hero p{
-  font-size:20px;
-  line-height:1.9;
-  color:#eee;
-  margin-bottom:40px;
-}
-
-.hero-btn{
-  display:inline-block;
-  padding:18px 40px;
-  background:gold;
-  color:black;
-  border-radius:50px;
-  text-decoration:none;
-  font-weight:700;
-  transition:0.3s;
-}
-
-.hero-btn:hover{
-  transform:translateY(-5px);
-  background:white;
-}
-
-/* SECTION */
-
-section{
-  padding:100px 8%;
-}
-
-.section-title{
-  text-align:center;
-  margin-bottom:50px;
-}
-
-.section-title span{
-  color:gold;
-  text-transform:uppercase;
-  letter-spacing:2px;
-}
-
-.section-title h2{
-  margin-top:10px;
-  font-size:46px;
-  font-family:'Cinzel',serif;
-}
-
-/* ABOUT */
-
-.about{
-  text-align:center;
-  max-width:950px;
-  margin:auto;
-}
-
-.about p{
-  color:#ddd;
-  line-height:2;
-  font-size:18px;
-}
-
-/* FEATURES */
-
-.features{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
-}
-
-.card{
-  background:linear-gradient(145deg,#121212,#0a0a0a);
-  padding:40px 30px;
-  border-radius:25px;
-  border:1px solid rgba(255,215,0,0.15);
-  transition:0.4s;
-  text-align:center;
-}
-
-.card:hover{
-  transform:translateY(-10px);
-  border-color:gold;
-}
-
-.card h3{
-  color:gold;
-  margin-bottom:15px;
-  font-size:24px;
-}
-
-.card p{
-  color:#ccc;
-  line-height:1.8;
-}
-
-/* GALLERY */
-
-.gallery-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:20px;
-}
-
-.gallery-grid img{
-  width:100%;
-  height:360px;
-  object-fit:cover;
-  border-radius:25px;
-  transition:0.4s;
-  border:1px solid rgba(255,215,0,0.15);
-}
-
-.gallery-grid img:hover{
-  transform:scale(1.03);
-}
-
-/* 360 */
-
-#panorama{
-  width:100%;
-  height:600px;
-  border-radius:30px;
-  overflow:hidden;
-  border:1px solid rgba(255,215,0,0.2);
-  box-shadow:0 30px 80px rgba(0,0,0,0.45);
-}
-
-.map-btn{
-  display:inline-block;
-  margin-top:30px;
-  padding:15px 35px;
-  border-radius:50px;
-  border:1px solid gold;
-  color:gold;
-  text-decoration:none;
-  transition:0.3s;
-}
-
-.map-btn:hover{
-  background:gold;
-  color:black;
-}
-
-/* BOOKING */
-
-.booking{
-  background:
-  linear-gradient(rgba(0,0,0,0.88),
-  rgba(0,0,0,0.88)),
-  url('https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=1600&auto=format&fit=crop')
-  center/cover fixed;
-}
-
-.booking-form{
-  max-width:800px;
-  margin:auto;
-  background:rgba(10,10,10,0.88);
-  padding:40px;
-  border-radius:30px;
-  border:1px solid rgba(255,215,0,0.2);
-
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:20px;
-}
-
-.input-box{
-  display:flex;
-  flex-direction:column;
-}
-
-.input-box label{
-  margin-bottom:8px;
-  color:gold;
-}
-
-.input-box input,
-.input-box select{
-  padding:16px;
-  border-radius:14px;
-  border:1px solid rgba(255,215,0,0.15);
-  background:#090909;
-  color:white;
-  outline:none;
-}
-
-.booking-form button{
-  grid-column:span 2;
-  padding:18px;
-  border:none;
-  border-radius:50px;
-  background:gold;
-  color:black;
-  font-weight:700;
-  cursor:pointer;
-  transition:0.3s;
-}
-
-.booking-form button:hover{
-  background:white;
-  transform:translateY(-4px);
-}
-
-#result{
-  max-width:800px;
-  margin:25px auto 0;
-  padding:18px;
-  border-radius:18px;
-  display:none;
-  background:rgba(255,215,0,0.08);
-  border:1px solid rgba(255,215,0,0.2);
-}
-
-/* FOOTER */
-
-footer{
-  padding:30px;
-  text-align:center;
-  color:#999;
-  background:black;
-}
-
-/* MOBILE */
-
-@media(max-width:900px){
-
-  nav{
-    display:none;
-  }
-
-  .hero h1{
-    font-size:70px;
-  }
-
-  .hero p{
-    font-size:17px;
-  }
-
-  .booking-form{
-    grid-template-columns:1fr;
-  }
-
-  .booking-form button{
-    grid-column:span 1;
-  }
-
-  #panorama{
-    height:400px;
-  }
-
-}
-
-  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css">
 </head>
 
 <body>
 
-<header>
-
-  <div class="logo">
-    TOSHKENT
-  </div>
+<header class="header">
+  <div class="logo">TOSHKENT</div>
 
   <nav>
-    <a href="#">Bosh sahifa</a>
-    <a href="#">Biz haqimizda</a>
-    <a href="#">Galereya</a>
-    <a href="#">360° Tour</a>
-    <a href="#">Bron qilish</a>
+    <a href="#home">Bosh sahifa</a>
+    <a href="#about">Haqida</a>
+    <a href="#tour">360°</a>
+    <a href="#booking">Bron</a>
+    <a href="#contact">Aloqa</a>
   </nav>
-
 </header>
 
-<!-- HERO -->
-
-<section class="hero">
-
+<section class="hero" id="home">
   <div class="hero-content">
-
-    <span>Premium Banket Zali</span>
-
+    <span>Premium to‘yxona</span>
     <h1>TOSHKENT</h1>
+    <p>Samarqand, Urgut, Sovg‘on mahallasida joylashgan zamonaviy va hashamatli to‘yxona.</p>
 
-    <p>
-      To‘y, sunnat, yubiley va oilaviy
-      marosimlar uchun zamonaviy hamda
-      hashamatli maskan.
-    </p>
-
-    <a href="#booking" class="hero-btn">
-      Bron qilish
-    </a>
-
+    <div class="hero-buttons">
+      <a href="#booking" class="btn gold">Bron qilish</a>
+      <a href="#tour" class="btn outline">360° ko‘rish</a>
+    </div>
   </div>
-
 </section>
 
-<!-- ABOUT -->
-
-<section class="about">
-
-  <div class="section-title">
+<section class="about" id="about">
+  <div class="title">
     <span>Biz haqimizda</span>
-    <h2>TOSHKENT To‘yxonasi</h2>
+    <h2>Hashamatli marosimlar uchun ideal maskan</h2>
   </div>
 
   <p>
-    TOSHKENT to‘yxonasi zamonaviy dizayn,
-    keng zal va premium muhit orqali
-    marosimlaringizni unutilmas tarzda
-    o‘tkazish uchun yaratilgan.
+    “TOSHKENT” to‘yxonasi to‘y, sunnat to‘yi, yubiley va boshqa oilaviy tadbirlar uchun
+    keng zal, premium interyer va qulay joylashuvni taqdim etadi.
   </p>
 
+  <div class="cards">
+    <div class="card">
+      <h3>Keng zal</h3>
+      <p>Mehmonlar uchun shinam va keng muhit.</p>
+    </div>
+
+    <div class="card">
+      <h3>Premium ko‘rinish</h3>
+      <p>Hashamatli interyer va chiroyli atmosfera.</p>
+    </div>
+
+    <div class="card">
+      <h3>Qulay manzil</h3>
+      <p>Samarqand, Urgut, Sovg‘on mahallasi.</p>
+    </div>
+  </div>
 </section>
 
-<!-- FEATURES -->
-
-<section class="features">
-
-  <div class="card">
-    <h3>Katta Zal</h3>
-    <p>Yuzlab mehmonlar uchun keng va yorug‘ muhit.</p>
+<section class="tour" id="tour">
+  <div class="title">
+    <span>Virtual ko‘rinish</span>
+    <h2>360° Tour</h2>
   </div>
 
-  <div class="card">
-    <h3>Premium Interyer</h3>
-    <p>Qora-oltin uslubdagi hashamatli dizayn.</p>
+  <p class="tour-text">
+    To‘yxonaning ichki qismini 360° formatda ixcham va qulay ko‘rinishda tomosha qiling.
+  </p>
+
+  <div class="tour-box">
+    <div id="panorama"></div>
   </div>
 
-  <div class="card">
-    <h3>Qulay Joylashuv</h3>
-    <p>Mehmonlar uchun qulay manzil va avtoturargoh.</p>
-  </div>
-
-  <div class="card">
-    <h3>Sahna Zonasi</h3>
-    <p>Kuyov-kelin va asosiy marosim uchun maxsus zona.</p>
-  </div>
-
+  <a class="map-link" target="_blank" href="https://www.google.com/maps/place/%22Toshkent%22+toyxona/@39.4810231,67.0923736">
+    Google Maps’da ochish
+  </a>
 </section>
-
-<!-- GALLERY -->
-
-<section>
-
-  <div class="section-title">
-    <span>Galereya</span>
-    <h2>Zal Ko‘rinishlari</h2>
-  </div>
-
-  <div class="gallery-grid">
-
-    <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1200&auto=format&fit=crop">
-
-    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop">
-
-    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200&auto=format&fit=crop">
-
-  </div>
-
-</section>
-
-<!-- 360 -->
-
-<section>
-
-  <div class="section-title">
-    <span>Virtual Tour</span>
-    <h2>360° Ko‘rinish</h2>
-  </div>
-
-  <div id="panorama"></div>
-
-  <div style="text-align:center;">
-
-    <a class="map-btn"
-    target="_blank"
-    href="https://www.google.com/maps/place/%22Toshkent%22+toyxona/@39.4810231,67.0923736">
-      Google Maps’da ochish
-    </a>
-
-  </div>
-
-</section>
-
-<!-- BOOKING -->
 
 <section class="booking" id="booking">
-
-  <div class="section-title">
-    <span>Online Bron</span>
-    <h2>Bron Qilish</h2>
+  <div class="title">
+    <span>Online bron</span>
+    <h2>Bron so‘rovi yuborish</h2>
   </div>
 
   <form class="booking-form" id="bookingForm">
+    <input type="text" id="fullName" placeholder="Ism familiya" required>
+    <input type="tel" id="phone" placeholder="Telefon raqam" required>
+    <input type="date" id="eventDate" required>
 
-    <div class="input-box">
-      <label>Ism familiya</label>
-      <input type="text" id="fullName" required>
-    </div>
+    <select id="eventTime" required>
+      <option value="">To‘y vaqtini tanlang</option>
+      <option value="Nahor">Nahor</option>
+      <option value="Kechki">Kechki</option>
+      <option value="Nahor va kechki">Nahor va kechki</option>
+    </select>
 
-    <div class="input-box">
-      <label>Telefon raqam</label>
-      <input type="tel" id="phone" required>
-    </div>
+    <select id="eventType" required>
+      <option value="">Tadbir turini tanlang</option>
+      <option value="Nikoh to‘yi">Nikoh to‘yi</option>
+      <option value="Sunnat to‘yi">Sunnat to‘yi</option>
+      <option value="Yubiley">Yubiley</option>
+      <option value="Boshqa tadbir">Boshqa tadbir</option>
+    </select>
 
-    <div class="input-box">
-      <label>Sana</label>
-      <input type="date" id="eventDate" required>
-    </div>
-
-    <div class="input-box">
-      <label>To‘y vaqti</label>
-
-      <select id="eventTime" required>
-        <option value="">Tanlang</option>
-        <option>Nahor</option>
-        <option>Kechki</option>
-        <option>Nahor va kechki</option>
-      </select>
-
-    </div>
-
-    <div class="input-box">
-      <label>Tadbir turi</label>
-
-      <select id="eventType" required>
-        <option value="">Tanlang</option>
-        <option>Nikoh to‘yi</option>
-        <option>Sunnat to‘yi</option>
-        <option>Yubiley</option>
-        <option>Boshqa tadbir</option>
-      </select>
-
-    </div>
-
-    <button type="submit">
-      Bron So‘rovini Yuborish
-    </button>
-
+    <button type="submit">Bron so‘rovini yuborish</button>
   </form>
 
-  <div id="result"></div>
+  <div id="bookingResult"></div>
+</section>
 
+<section class="contact" id="contact">
+  <div class="title">
+    <span>Aloqa</span>
+    <h2>Bog‘lanish</h2>
+  </div>
+
+  <div class="contact-box">
+    <p>📍 Samarqand, Urgut, Sovg‘on mahallasi</p>
+    <p>📞 <a href="tel:+998937444422">+998 93 744 44 22</a></p>
+    <p>📸 <a target="_blank" href="https://www.instagram.com/toshkent_tuyxona/">@toshkent_tuyxona</a></p>
+  </div>
 </section>
 
 <footer>
-  © 2026 TOSHKENT To‘yxonasi
+  © 2026 TOSHKENT To‘yxonasi. Demo loyiha.
 </footer>
 
-<!-- PANNELLUM -->
-
 <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
-
-<script>
-
-pannellum.viewer('panorama', {
-
-  type: 'equirectangular',
-
-  panorama:
-  'https://pannellum.org/images/alma.jpg',
-
-  autoLoad: true,
-
-  autoRotate: -2,
-
-  showZoomCtrl: true
-
-});
-
-const bookingForm =
-document.getElementById("bookingForm");
-
-const result =
-document.getElementById("result");
-
-bookingForm.addEventListener("submit",
-async function(e){
-
-  e.preventDefault();
-
-  const fullName =
-  document.getElementById("fullName").value;
-
-  const phone =
-  document.getElementById("phone").value;
-
-  const eventDate =
-  document.getElementById("eventDate").value;
-
-  const eventTime =
-  document.getElementById("eventTime").value;
-
-  const eventType =
-  document.getElementById("eventType").value;
-
-  result.style.display = "block";
-
-  result.innerHTML =
-  "⏳ Bron so‘rovi yuborilmoqda...";
-
-  try{
-
-    const response =
-    await fetch("/api/send-booking",{
-
-      method:"POST",
-
-      headers:{
-        "Content-Type":"application/json"
-      },
-
-      body:JSON.stringify({
-
-        fullName,
-        phone,
-        eventDate,
-        eventTime,
-        eventType
-
-      })
-
-    });
-
-    const data =
-    await response.json();
-
-    if(data.success){
-
-      result.innerHTML =
-      "✅ Bron so‘rovingiz muvaffaqiyatli yuborildi!";
-
-      bookingForm.reset();
-
-    }else{
-
-      result.innerHTML =
-      "❌ Xatolik yuz berdi.";
-
-    }
-
-  }catch(error){
-
-    result.innerHTML =
-    "❌ Server bilan bog‘lanishda xatolik.";
-
-  }
-
-});
-
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>

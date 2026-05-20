@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>TOSHKENT To‘yxonasi</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="logo">TOSHKENT</div>
+
+    <nav>
+      <a href="#home">Bosh sahifa</a>
+      <a href="#about">Biz haqimizda</a>
+      <a href="#features">Qulayliklar</a>
+      <a href="#gallery">Galereya</a>
+      <a href="#booking">Bron qilish</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <span class="hero-label">Premium banket zali</span>
+
+      <h1>TOSHKENT</h1>
+
+      <p>
+        To‘y, nikoh, sunnat to‘yi, yubiley va oilaviy marosimlar uchun
+        zamonaviy hamda hashamatli maskan.
+      </p>
+
+      <a href="#booking" class="main-btn">Bron qilish</a>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="section-title">
+      <span>Biz haqimizda</span>
+      <h2>TOSHKENT to‘yxonasi</h2>
+    </div>
+
+    <p>
+      TOSHKENT to‘yxonasi keng zal, premium muhit va zamonaviy interyer orqali
+      oilaviy marosimlaringizni chiroyli o‘tkazish uchun qulay maskan.
+      Sayt demo ko‘rinishda tayyorlandi, real rasmlar keyinchalik yangilanadi.
+    </p>
+  </section>
+
+  <section class="features" id="features">
+    <div class="feature-card">
+      <h3>Keng zal</h3>
+      <p>Mehmonlar uchun qulay, yorug‘ va shinam banket zali.</p>
+    </div>
+
+    <div class="feature-card">
+      <h3>Premium interyer</h3>
+      <p>Qora-oltin uslubdagi hashamatli dizayn va chiroyli atmosfera.</p>
+    </div>
+
+    <div class="feature-card">
+      <h3>Sahna zonasi</h3>
+      <p>Kuyov-kelin va asosiy tadbirlar uchun markaziy dekor zona.</p>
+    </div>
+
+    <div class="feature-card">
+      <h3>Avtoturargoh</h3>
+      <p>Mehmonlar uchun qulay joylashuv va mashina qo‘yish imkoniyati.</p>
+    </div>
+  </section>
+
+  <section class="gallery" id="gallery">
+    <div class="section-title">
+      <span>Galereya</span>
+      <h2>Zal ko‘rinishlari</h2>
+    </div>
+
+    <div class="gallery-grid">
+      <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=1200&auto=format&fit=crop" alt="To‘yxona zali">
+      <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop" alt="Marosim">
+      <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=1200&auto=format&fit=crop" alt="To‘y dekor">
+    </div>
+  </section>
+
+  <section class="booking" id="booking">
+    <div class="section-title">
+      <span>Online so‘rov</span>
+      <h2>Bron qilish</h2>
+    </div>
+
+    <p class="booking-text">
+      Tadbir sanasi, vaqti va turini tanlang. Ma’lumotlar hozircha demo rejimda
+      Telegram xabar ko‘rinishida tayyorlanadi.
+    </p>
+
+    <form class="booking-form" id="bookingForm">
+      <div class="form-group">
+        <label>Ism familiya</label>
+        <input type="text" id="fullName" placeholder="Masalan: Ali Valiyev" required>
+      </div>
+
+      <div class="form-group">
+        <label>Telefon raqam</label>
+        <input type="tel" id="phone" placeholder="+998 90 123 45 67" required>
+      </div>
+
+      <div class="form-group">
+        <label>Tadbir sanasi</label>
+        <input type="date" id="eventDate" required>
+      </div>
+
+      <div class="form-group">
+        <label>To‘y vaqti</label>
+        <select id="eventTime" required>
+          <option value="">Tanlang</option>
+          <option value="Nahor">Nahor</option>
+          <option value="Kechki">Kechki</option>
+          <option value="Nahor va kechki">Nahor va kechki</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Tadbir turi</label>
+        <select id="eventType" required>
+          <option value="">Tanlang</option>
+          <option value="Nikoh to‘yi">Nikoh to‘yi</option>
+          <option value="Sunnat to‘yi">Sunnat to‘yi</option>
+          <option value="Yubiley">Yubiley</option>
+          <option value="Oilaviy marosim">Oilaviy marosim</option>
+          <option value="Boshqa tadbir">Boshqa tadbir</option>
+        </select>
+      </div>
+
+      <button type="submit">Bron so‘rovini yuborish</button>
+    </form>
+
+    <div class="booking-result" id="bookingResult"></div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2026 TOSHKENT To‘yxonasi. Demo loyiha.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
